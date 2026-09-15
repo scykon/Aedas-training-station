@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>商业综合体平面设计 · 成长计划</title>
+<style>
+  :root{
+    --ink:#16191f;
+    --ink-2:#3d444f;
+    --ink-3:#6b7280;
+    --line:#e4e7ee;
+    --line-2:#f0f2f6;
+    --bg:#f6f7fa;
+    --card:#ffffff;
+    --accent:#2b4c8c;
+    --accent-soft:#eef2fa;
+    --amber:#b8762a;
+    --amber-soft:#fdf4e8;
+    --red:#a8342c;
+    --red-soft:#fcefee;
+    --green:#2f6b4f;
+    --green-soft:#edf6f1;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:15px;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px 100px;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:linear-gradient(165deg,#1e2a44 0%,#2b4c8c 100%);
+    color:#fff;border-radius:0 0 26px 26px;
+    padding:60px 24px 52px;margin-bottom:38px;
+  }
+  .hero-inner{max-width:1012px;margin:0 auto;}
+  .hero .kicker{
+    display:inline-block;font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;color:#9db4e0;
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:999px;padding:5px 14px;margin-bottom:20px;
+  }
+  .hero h1{font-size:37px;line-height:1.3;margin:0 0 14px;font-weight:700;letter-spacing:-.4px;}
+  .hero .sub{font-size:16px;color:#c3d1e8;max-width:720px;margin:0 0 30px;line-height:1.85;}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:12px;}
+  .hm{
+    background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);
+    border-radius:11px;padding:11px 17px;min-width:150px;
+  }
+  .hm .k{font-size:11px;color:#9db4e0;letter-spacing:.08em;display:block;margin-bottom:2px;}
+  .hm .v{font-size:15px;font-weight:600;}
+
+  /* ---------- Sections ---------- */
+  section{margin-bottom:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:13px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--line);}
+  .sec-num{
+    font-size:13px;font-weight:700;color:#fff;background:var(--accent);
+    border-radius:7px;padding:3px 9px;letter-spacing:.04em;flex:none;
+  }
+  .sec-head h2{font-size:21px;margin:0;font-weight:700;letter-spacing:-.2px;}
+  .sec-desc{font-size:13.5px;color:var(--ink-3);margin:-12px 0 20px;}
+
+  /* ---------- Cards ---------- */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:24px 26px;}
+  .card + .card{margin-top:14px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  @media(max-width:820px){.grid2,.grid3,.grid4{grid-template-columns:1fr;}}
+
+  /* ---------- Compare ---------- */
+  .cmp{border-radius:15px;padding:22px 24px;border:1px solid var(--line);}
+  .cmp.a{background:#f4f6fb;}
+  .cmp.b{background:#fdf8f1;}
+  .cmp h3{margin:0 0 14px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;}
+  .tag{font-size:11px;padding:2px 8px;border-radius:5px;font-weight:600;letter-spacing:.03em;}
+  .tag.old{background:#dfe4ef;color:#3b4a68;}
+  .tag.new{background:#e8d9bf;color:#7a4f14;}
+  .cmp ul{margin:0;padding-left:19px;font-size:13.8px;color:var(--ink-2);}
+  .cmp li{margin-bottom:7px;}
+
+  /* ---------- Stage ---------- */
+  .stage{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:22px 24px;position:relative;overflow:hidden;}
+  .stage::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent);}
+  .stage.s2::before{background:var(--amber);}
+  .stage.s3::before{background:var(--green);}
+  .stage .ph{font-size:11.5px;letter-spacing:.1em;color:var(--ink-3);font-weight:600;text-transform:uppercase;}
+  .stage h3{margin:5px 0 12px;font-size:17px;font-weight:700;}
+  .stage p{margin:0 0 12px;font-size:13.6px;color:var(--ink-2);}
+  .chk{list-style:none;margin:0;padding:0;font-size:13.4px;color:var(--ink-2);}
+  .chk li{padding-left:20px;position:relative;margin-bottom:6px;}
+  .chk li::before{content:"○";position:absolute;left:0;color:var(--accent);font-size:12px;top:1px;}
+  .stage.s2 .chk li::before{color:var(--amber);}
+  .stage.s3 .chk li::before{color:var(--green);}
+
+  /* ---------- Timeline ---------- */
+  .tl{display:flex;flex-direction:column;gap:0;background:var(--card);border:1px solid var(--line);border-radius:15px;overflow:hidden;}
+  .tl-row{display:grid;grid-template-columns:130px 1fr;gap:0;border-bottom:1px solid var(--line-2);}
+  .tl-row:last-child{border-bottom:none;}
+  .tl-time{
+    background:#f8f9fc;padding:17px 18px;font-weight:700;font-size:13.5px;color:var(--accent);
+    border-right:1px solid var(--line-2);display:flex;align-items:center;
+  }
+  .tl-body{padding:17px 22px;font-size:13.8px;color:var(--ink-2);}
+  .tl-body strong{color:var(--ink);display:block;margin-bottom:3px;font-size:14.2px;}
+  @media(max-width:820px){.tl-row{grid-template-columns:1fr;}.tl-time{border-right:none;border-bottom:1px solid var(--line-2);padding:12px 18px;}}
+
+  /* ---------- Week grid ---------- */
+  .wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  @media(max-width:900px){.wgrid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.wgrid{grid-template-columns:1fr;}}
+  .wk{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:17px 18px;transition:.18s;}
+  .wk:hover{border-color:#c3cee6;box-shadow:0 4px 16px rgba(43,76,140,.07);}
+  .wk .n{font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:5px;padding:2px 7px;display:inline-block;margin-bottom:9px;letter-spacing:.04em;}
+  .wk h4{margin:0 0 8px;font-size:14.5px;font-weight:700;line-height:1.5;}
+  .wk p{margin:0;font-size:12.8px;color:var(--ink-3);line-height:1.7;}
+  .wk .num{margin-top:9px;font-size:12.2px;color:var(--amber);font-weight:600;border-top:1px dashed var(--line);padding-top:8px;}
+
+  /* ---------- Table ---------- */
+  table{width:100%;border-collapse:collapse;background:var(--card);border-radius:13px;overflow:hidden;font-size:13.5px;}
+  th{background:#eef1f7;color:var(--ink);font-weight:700;text-align:left;padding:12px 15px;font-size:12.8px;letter-spacing:.02em;border-bottom:1px solid var(--line);}
+  td{padding:11px 15px;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--ink-2);}
+  tr:last-child td{border-bottom:none;}
+  td strong{color:var(--ink);}
+  .num-cell{font-variant-numeric:tabular-nums;font-weight:600;color:var(--accent);white-space:nowrap;}
+
+  /* ---------- Rubric ---------- */
+  .rubric td:first-child{font-weight:600;color:var(--ink);white-space:nowrap;}
+  .wbar{display:inline-block;height:6px;border-radius:3px;background:var(--accent);vertical-align:middle;margin-right:7px;}
+  .band{display:flex;gap:11px;align-items:stretch;margin-bottom:9px;}
+  .band .sc{flex:none;width:92px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff;letter-spacing:.02em;}
+  .band .bd{flex:1;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:11px 15px;font-size:13.4px;color:var(--ink-2);}
+  .band .bd strong{color:var(--ink);}
+  .b-a{background:#2b4c8c;}.b-b{background:#4a7ab0;}.b-c{background:#c99349;}.b-d{background:#a8342c;}
+
+  /* ---------- Callouts ---------- */
+  .note{border-radius:12px;padding:17px 20px;font-size:13.6px;line-height:1.8;}
+  .note strong{font-weight:700;}
+  .note.amber{background:var(--amber-soft);border:1px solid #efdcc0;color:#6b4a1c;}
+  .note.amber strong{color:#8a5c17;}
+  .note.red{background:var(--red-soft);border:1px solid #f0d5d3;color:#7d2b25;}
+  .note.red strong{color:var(--red);}
+  .note.blue{background:var(--accent-soft);border:1px solid #d9e2f3;color:#2a3f66;}
+  .note.blue strong{color:var(--accent);}
+  .note.green{background:var(--green-soft);border:1px solid #d3e7dc;color:#2a5642;}
+  .note.green strong{color:var(--green);}
+
+  /* ---------- Files ---------- */
+  .files{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+  @media(max-width:700px){.files{grid-template-columns:1fr;}}
+  .f{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 17px;font-size:13.4px;}
+  .f code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.4px;background:#f2f4f9;border-radius:5px;padding:2px 7px;color:var(--accent);display:inline-block;margin-bottom:5px;}
+  .f p{margin:0;color:var(--ink-3);font-size:12.7px;line-height:1.65;}
+
+  h3.blk{font-size:15.5px;font-weight:700;margin:26px 0 13px;display:flex;align-items:center;gap:9px;}
+  h3.blk::before{content:"";width:3px;height:15px;background:var(--accent);border-radius:2px;}
+  .foot{text-align:center;color:var(--ink-3);font-size:12.5px;margin-top:52px;padding-top:22px;border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="kicker">Career Growth Plan</span>
+    <h1>从立面设计师到商业综合体平面设计师</h1>
+    <p class="sub">你已经有别人没有的东西 —— 立面功底和尺度感。缺的不是天赋，是一整套关于「平面如何赚钱」的系统和指标。这份计划用 12 周把它补齐，把平面能力接到你的立面优势上，形成 Aedas 这类强调设计一体化的公司最稀缺的复合能力。</p>
+    <div class="hero-meta">
+      <div class="hm"><span class="k">训练日</span><span class="v">仅周一~周五</span></div>
+      <div class="hm"><span class="k">每日投入</span><span class="v">30min 阅读 + 60min 手绘</span></div>
+      <div class="hm"><span class="k">完整周期</span><span class="v">12 周 / 60 个训练日</span></div>
+      <div class="hm"><span class="k">起止日期</span><span class="v">2026-09-21 ~ 12-21</span></div>
+      <div class="hm"><span class="k">反馈机制</span><span class="v">每晚六维评审卡</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- 1 能力诊断 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>能力诊断：鸿沟到底在哪</h2></div>
+    <p class="sec-desc">不是「不懂平面」，而是两种设计思维方式需要切换。看清这个差别，训练才有方向。</p>
+    <div class="grid2">
+      <div class="cmp a">
+        <h3>你现在的工作方式 <span class="tag old">立面思维</span></h3>
+        <ul>
+          <li>从「形式结果」出发 —— 先有形象，再倒推逻辑</li>
+          <li>尺度感来自视觉比例和材质分格</li>
+          <li>核心约束是造型、材料、构造节点</li>
+          <li>评价标准是「好不好看、上不上档次」</li>
+          <li>工作界面相对独立，主要为单体服务</li>
+        </ul>
+      </div>
+      <div class="cmp b">
+        <h3>平面设计师的工作方式 <span class="tag new">系统思维</span></h3>
+        <ul>
+          <li>从「系统约束」出发 —— 先定逻辑，形式是其结果</li>
+          <li>尺度感来自人的行为、人流密度、商业运营</li>
+          <li>核心约束是业态、动线、结构、机电、消防、后勤六件事的叠加</li>
+          <li>评价标准是「好不好用、赚不赚钱、能不能通过审查」</li>
+          <li>工作界面交叉，是各专业矛盾的交汇点</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note blue" style="margin-top:14px;">
+      <strong>四个必须重建的认知：</strong>① 从「形」到「系统」—— 平面是六套系统的叠合图；② 从「比例」到「指标」—— 得铺率、回环度、进深面宽比才是硬语言；③ 从「视觉满意度」到「运营满意度」—— 平面的甲方是招商和运营；④ 从「我画得好不好」到「别人能不能用」—— 招商经理、消防审查、施工图团队都是你的读者。
+    </div>
+  </section>
+
+  <!-- 2 目标体系 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>目标体系：三个台阶</h2></div>
+    <p class="sec-desc">每个阶段都有可验收的硬指标，不靠感觉判断自己进步了没有。</p>
+    <div class="grid3">
+      <div class="stage">
+        <div class="ph">Stage 1 · 第 1–12 周</div>
+        <h3>基础重建</h3>
+        <p>把「会看平面」变成「会拆平面」。建立指标意识，形成肌肉记忆。</p>
+        <ul class="chk">
+          <li>能不看资料说出 12 个核心指标数字</li>
+          <li>任何陌生平面 10 分钟内拆出六个图层</li>
+          <li>手算得铺率、回环度、疏散宽度</li>
+          <li>独立完成 4 万㎡ 地块商业裙楼完整平面</li>
+        </ul>
+      </div>
+      <div class="stage s2">
+        <div class="ph">Stage 2 · 第 4–6 个月</div>
+        <h3>能力合成</h3>
+        <p>把平面能力接回立面优势，形成别人替代不了的定位。</p>
+        <ul class="chk">
+          <li>主持单层平面的方案深化至可汇报深度</li>
+          <li>做出「立面—平面」对位分析图，成为个人标志性图</li>
+          <li>积累 2–3 个完整商业项目进作品集</li>
+          <li>补软件：Revit / BIM 与 Rhino + Grasshopper</li>
+        </ul>
+      </div>
+      <div class="stage s3">
+        <div class="ph">Stage 3 · 第 12–24 个月</div>
+        <h3>对标 Aedas</h3>
+        <p>把能力翻译成 Aedas 招聘语言，并能在面试中讲出来。</p>
+        <ul class="chk">
+          <li>作品集覆盖综合体 / 商业 / 酒店 / 办公四类</li>
+          <li>能用中英文各讲一遍自己的设计逻辑</li>
+          <li>具备「商业设计 + 设计规范 + 技术能力」的组合</li>
+          <li>有清晰的差异化标签，而不是又一个会画图的人</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="blk">Aedas 公开岗位要求 → 你的补课表</h3>
+    <table>
+      <thead><tr><th style="width:30%">Aedas 要求</th><th style="width:20%">时间要求</th><th>你现在的状态与动作</th></tr></thead>
+      <tbody>
+        <tr><td><strong>综合体/商业/酒店/办公项目经验</strong></td><td>助理岗 1 年+<br>设计师岗 4 年+</td><td>立面经验可部分计入。缺的是商业平面与全程参与记录 —— 用第 11 周「反推自己项目平面」补齐叙事</td></tr>
+        <tr><td><strong>CAD / Photoshop / V-Ray</strong></td><td>立即需具备</td><td>立面设计师通常已熟练，无需额外投入</td></tr>
+        <tr><td><strong>Revit / BIM</strong></td><td>硬性要求</td><td>若未掌握，第 4–6 个月必须补，这是 Aedas 岗位描述里出现频率最高的软件</td></tr>
+        <tr><td><strong>Rhino + Grasshopper</strong></td><td>硬性要求</td><td>同上。参数化是综合体立面与平面联动的关键技术，与你的优势天然契合</td></tr>
+        <tr><td><strong>商业设计 + 设计规范 + 技术能力</strong></td><td>主任设计师岗明确要求</td><td><strong>这正是本计划第 2、8、9、10 周的内容</strong> —— 规范与技术能力被写进了晋升标准</td></tr>
+        <tr><td><strong>中英文书面与口语流利</strong></td><td>硬性要求</td><td>每周挑一次抄绘自评，用英文写一遍，练成习惯</td></tr>
+        <tr><td><strong>作品集（Portfolio attached is a must）</strong></td><td>决定性材料</td><td>唯一真正决定成败的材料。见下方第 07 节</td></tr>
+        <tr><td><strong>手绘能力（Good hand drawing skills is a plus）</strong></td><td>加分项</td><td>你正在练的每日抄绘，正好喂到这个加分项上</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 3 每日节奏 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>每日节奏：30 分钟阅读 + 60 分钟手绘</h2></div>
+    <p class="sec-desc">节奏固定，内容每天变。上午收到任务包，晚上交图拿评价。<strong>只在周一~周五训练，周末全休。</strong></p>
+    <div class="note" style="margin-bottom:13px;">
+      <strong>两条硬规则：</strong>① <strong>只在周一~周五训练</strong>，周六周日不推送、不评价、不打卡；② <strong>法定节假日停训并自动顺延</strong>——2026 年内会碰到中秋（9/25）与国庆（10/1–10/7），共 6 个工作日不计入训练日。逐日日期见 <code>04-训练日历.md</code> 的查询表。
+    </div>
+    <div class="tl">
+      <div class="tl-row">
+        <div class="tl-time">10:00</div>
+        <div class="tl-body"><strong>收到今日任务包</strong>阅读材料 + 带着读的 3 个问题 + 今日抄绘对象与必画要素 + 晚间自评点<br><span style="opacity:.7">仅在周一~周五推送</span></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">白天 30 min</div>
+        <div class="tl-body"><strong>专业阅读</strong>按 5 种日型轮换：规范精读 / 案例平面精读 / 技术文章 / 指标与算法 / 复盘与自测。<strong>硬要求：记下 3 个数字或 3 条结论</strong>，写不出来等于没读</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">白天 60 min</div>
+        <div class="tl-body"><strong>手绘平面练习 · 分层抄绘法</strong>10 min 先量后画拆解 → 35 min 按六图层抄绘 → 15 min 标注补全与自评</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">21:30</div>
+        <div class="tl-body"><strong>上传图纸 → 专业评价</strong>照片放入工作区后，输出六维评分卡 + 致命问题 Top3 + 对标案例 + 明日训练点</div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time">周六 / 周日</div>
+        <div class="tl-body"><strong>全休</strong>不推送、不评价。想放松可自愿逛 gooood / ArchDaily / Aedas 官网，只收藏不精读，不计入训练日</div>
+      </div>
+    </div>
+    <div class="note amber" style="margin-top:14px;">
+      <strong>关于评价的说明：</strong>我可以对手绘平面做专业技术评价 —— 但这张图必须真实存在。把照片或扫描件放进工作区的 <code>uploads</code> 目录，评价才会发生；没上传时，晚间只会给你一份自评清单和本周常见错误提醒。练习的主动权在你这边。
+    </div>
+  </section>
+
+  <!-- 4 12周路线图 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>12 周路线图</h2></div>
+    <p class="sec-desc">每周一个主题，每周一个抄绘对象。从「抄骨架」一路走到「自己出图」。</p>
+    <div class="wgrid">
+      <div class="wk"><span class="n">W1</span><h4>平面的语法</h4><p>柱网 · 开间进深 · 层高净高 · 核心筒。抄绘商业标准层骨架</p><div class="num">层高 6m/5.4m｜进深:面宽 2:1</div></div>
+      <div class="wk"><span class="n">W2</span><h4>防火分区与疏散</h4><p>GB 50016 第 5.3 / 5.5 节。抄绘平面叠加防火分区与疏散楼梯</p><div class="num">层数控 4 层内｜疏散宽度手算</div></div>
+      <div class="wk"><span class="n">W3</span><h4>动线基础</h4><p>单动线 / 环形 / 主次动线。抄万象城、大悦城，重画主动线</p><div class="num">回环度｜动线总长 300–450m</div></div>
+      <div class="wk"><span class="n">W4</span><h4>中庭与节点</h4><p>中庭位置决定租金等级。抄东直门来福士、上海世茂广场</p><div class="num">可见性｜挑空与退台关系</div></div>
+      <div class="wk"><span class="n">W5</span><h4>铺位划分与得铺率</h4><p>面宽进深比、小铺率、死铺识别。完整划分铺位并计算</p><div class="num">得铺率 ≥55%｜小铺率 ≥60%</div></div>
+      <div class="wk"><span class="n">W6</span><h4>业态与主力店</h4><p>超市 B1、影院顶层、冰场。抄带主力店的完整商业平面</p><div class="num">主力店面积比 ≥30%</div></div>
+      <div class="wk"><span class="n">W7</span><h4>垂直交通与多首层</h4><p>下沉广场、天桥、TOD。抄 Aedas 上海 Landmark Center</p><div class="num">用三种手段造三个「首层」</div></div>
+      <div class="wk"><span class="n">W8</span><h4>后勤与机电</h4><p>卸货、垃圾、货运、管井。给平面补全货物流线</p><div class="num">设备机房约 6%｜货运净高 3.6m</div></div>
+      <div class="wk"><span class="n">W9</span><h4>防火深化与消防车道</h4><p>消防车道、登高场地、中庭防火分隔的取舍</p><div class="num">体验 vs 规范的成本博弈</div></div>
+      <div class="wk"><span class="n">W10</span><h4>地库与停车</h4><p>JGJ 100。抄停车平面，算停车效率</p><div class="num">配比 ≥1 辆/100㎡｜37–40㎡/车位</div></div>
+      <div class="wk"><span class="n">W11</span><h4>立面—平面一体化</h4><p><strong>你的王牌周。</strong>拿自己参与过的立面项目反推平面</p><div class="num">立面开间 = 平面柱距</div></div>
+      <div class="wk"><span class="n">W12</span><h4>综合实战出图</h4><p>4 万㎡ 地块，总图 + 首层 + 标准层 + 完整指标表</p><div class="num">六项验收全部达标</div></div>
+    </div>
+  </section>
+
+  <!-- 5 评价标准 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><h2>评价标准：六维评审卡</h2></div>
+    <p class="sec-desc">按 Aedas 方案评审的严格度执行 —— 具体到图纸上的位置和尺寸，不客套。权重可在每晚的评价中按主题动态调整，但对齐商业逻辑。</p>
+    <table class="rubric">
+      <thead><tr><th style="width:24%">评价维度</th><th style="width:16%">权重</th><th>评什么</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>动线组织与回游性</td>
+          <td class="num-cell"><span class="wbar" style="width:50px"></span>25%</td>
+          <td>主动线是否清晰唯一、回环度、可见性与可达性。出现副动线或断头动线即重扣</td>
+        </tr>
+        <tr>
+          <td>商业效率</td>
+          <td class="num-cell"><span class="wbar" style="width:40px"></span>20%</td>
+          <td>得铺率、小铺率、主力店占比、进深面宽比、死铺数量 —— 直接对应租金</td>
+        </tr>
+        <tr>
+          <td>结构逻辑与柱网适配</td>
+          <td class="num-cell"><span class="wbar" style="width:30px"></span>15%</td>
+          <td>柱网是否规则、核心筒落位、铺位是否骑柱</td>
+        </tr>
+        <tr>
+          <td>空间体验与中庭体系</td>
+          <td class="num-cell"><span class="wbar" style="width:30px"></span>15%</td>
+          <td>中庭位置与尺度、节点序列、视线通廊、空间层次</td>
+        </tr>
+        <tr>
+          <td>后勤与规范</td>
+          <td class="num-cell"><span class="wbar" style="width:30px"></span>15%</td>
+          <td>人货分离、卸货垃圾设备管井、疏散宽度与距离、无障碍</td>
+        </tr>
+        <tr>
+          <td>图面表达与信息层级</td>
+          <td class="num-cell"><span class="wbar" style="width:20px"></span>10%</td>
+          <td>线型分级、标注完整、指北针、比例尺、图例、分析草图</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="blk">分档标准</h3>
+    <div class="band"><div class="sc b-a">85–100</div><div class="bd"><strong>A｜投标级</strong> —— 可直接进入 Aedas 方案投标文本的完成度</div></div>
+    <div class="band"><div class="sc b-b">70–84</div><div class="bd"><strong>B｜主创可接受</strong> —— 成熟设计院主创审图可过，逻辑成立，局部需深化</div></div>
+    <div class="band"><div class="sc b-c">55–69</div><div class="bd"><strong>C｜实习水平</strong> —— 图形正确但缺运营意识，属于「会画图不会做设计」</div></div>
+    <div class="band"><div class="sc b-d">低于 55</div><div class="bd"><strong>D｜概念阶段</strong> —— 存在结构性硬伤，须退回重做</div></div>
+
+    <h3 class="blk">每次评价的固定输出</h3>
+    <div class="grid3">
+      <div class="card" style="padding:17px 19px;">
+        <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:7px;">① 诊断</div>
+        <p style="margin:0;font-size:13.2px;color:var(--ink-2);">一句话总评 · 六维评分卡 · 加权总分与档位</p>
+      </div>
+      <div class="card" style="padding:17px 19px;">
+        <div style="font-size:13px;font-weight:700;color:var(--red);margin-bottom:7px;">② 问题</div>
+        <p style="margin:0;font-size:13.2px;color:var(--ink-2);">致命问题 Top3（不改会废，指到图上位置）· 提升建议 Top2</p>
+      </div>
+      <div class="card" style="padding:17px 19px;">
+        <div style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:7px;">③ 参照</div>
+        <p style="margin:0;font-size:13.2px;color:var(--ink-2);">对标真实案例 · 明日针对性训练点（落到具体动作）</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 指标速查 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><h2>商业平面技术指标速查表</h2></div>
+    <p class="sec-desc">这张表要背下来。它们是商业平面的「语法」，也是评审时用来判定对错的标准。</p>
+    <table>
+      <thead><tr><th style="width:34%">指标</th><th style="width:26%">标准值</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td><strong>得铺率</strong></td><td class="num-cell">≥ 55%</td><td>可租赁面积 ÷ 商场建筑面积。单动线约 57.5%，环形动线约 55.5%。低于 55% 运营压力大，高于 65% 牺牲体验</td></tr>
+        <tr><td><strong>小铺率</strong></td><td class="num-cell">≥ 60%</td><td>150㎡ 以下小铺数量 ÷ 铺位总数（数量比）</td></tr>
+        <tr><td><strong>主力店面积占比</strong></td><td class="num-cell">≥ 30%</td><td>主力店（超市、冰场、影院等）面积 ÷ 可租赁建筑面积</td></tr>
+        <tr><td><strong>商铺进深 : 面宽</strong></td><td class="num-cell">2 : 1，上限 3 : 1</td><td>超过 3:1 商铺价值显著下降，后半段无法经营</td></tr>
+        <tr><td><strong>平层动线总长</strong></td><td class="num-cell">280–400 m</td><td>行业实际区间 300–450m。过长则回环度难保证、顾客疲劳</td></tr>
+        <tr><td><strong>单动线平均进深</strong></td><td class="num-cell">55–75 m</td><td>对应单动线平面。超过 75m 宜改为环形</td></tr>
+        <tr><td><strong>环形动线平均进深</strong></td><td class="num-cell">110–200 m</td><td>75–110m 区间必须论证两种动线优劣</td></tr>
+        <tr><td><strong>可达性 / 可视性</strong></td><td class="num-cell">≥ 60% / ≥ 80%</td><td>头部开发商（中海等）的内部管控标准</td></tr>
+        <tr><td><strong>首层 / 标准层层高</strong></td><td class="num-cell">6 m / 5.4 m</td><td>净高分别 4.2m 与 3.6m。B1 设超市时层高 5.7m</td></tr>
+        <tr><td><strong>货运通道净高</strong></td><td class="num-cell">≥ 3.6 m</td><td>与顾客动线彻底分离</td></tr>
+        <tr><td><strong>商铺线与铺内柱边间距</strong></td><td class="num-cell">≥ 400 mm</td><td>预留设置消火栓箱的空间</td></tr>
+        <tr><td><strong>建筑密度</strong></td><td class="num-cell">≥ 50%</td><td>自持商业用地。<50% 属于风险项目。绿化率建议 5%–15%，不宜超 20%</td></tr>
+        <tr><td><strong>车位配建</strong></td><td class="num-cell">≥ 1 辆 / 100㎡</td><td>自持商业不应使用机械车位（满意度低）</td></tr>
+        <tr><td><strong>单车位面积</strong></td><td class="num-cell">≥ 37㎡（人防 ≥ 40㎡）</td><td>不含商业专属设备用房及非机动车库面积</td></tr>
+        <tr><td><strong>设备机房面积</strong></td><td class="num-cell">≈ 商业建面 6%</td><td>平面阶段就必须预留，后期无法追补</td></tr>
+        <tr><td><strong>商业层数</strong></td><td class="num-cell">尽量 ≤ 4 层</td><td>争取「多层建筑」认定，可大幅减少消防投入、提高物业净收入</td></tr>
+        <tr><td><strong>塔楼落位</strong></td><td class="num-cell">≤ 2 座，置于动线尽端或冷区</td><td>不宜在购物中心上方布置，避免破坏商业平面的完整性</td></tr>
+        <tr><td><strong>顾客疲劳阈值</strong></td><td class="num-cell">3 小时 / 7500 m</td><td>超过这个尺度，商场必须提供休息与体验节点</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 7 差异化定位 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">07</span><h2>你的差异化定位与作品集策略</h2></div>
+    <p class="sec-desc">不要试图变成「另一个平面设计师」，那样的竞争者太多了。要变成那个能打通两者的人。</p>
+    <div class="note green">
+      <strong>核心定位：会做平面的立面设计师。</strong>行业里最普遍的断层就是立面与平面脱节 —— 立面设计师不理解柱网约束，平面设计师做的体量无法适配立面分格，最后靠「贴皮」收场。Aedas 这类强调设计一体化的公司，最缺的正是能用一个逻辑同时解决平面与立面的人。你的立面功底是入场券，补上平面系统能力后，你不是转行，是升级。
+    </div>
+
+    <h3 class="blk">作品集的三条策略</h3>
+    <div class="grid3">
+      <div class="card" style="padding:19px 21px;">
+        <div style="font-size:13.5px;font-weight:700;margin-bottom:8px;">① 用真实项目重做</div>
+        <p style="margin:0;font-size:13.2px;color:var(--ink-2);">第 11 周就要做这件事。挑你参与过的真实商业项目，用 Aedas 的图纸标准重做它的平面 —— 这比凭空做新概念有说服力得多</p>
+      </div>
+      <div class="card" style="padding:19px 21px;">
+        <div style="font-size:13.5px;font-weight:700;margin-bottom:8px;">② 做对位分析图</div>
+        <p style="margin:0;font-size:13.2px;color:var(--ink-2);">「立面分格 ↔ 柱网 ↔ 商铺开间」三张图上下对齐，标出矛盾与解决方式。这是几乎没人做的图，也是最容易被记住的图</p>
+      </div>
+      <div class="card" style="padding:19px 21px;">
+        <div style="font-size:13.5px;font-weight:700;margin-bottom:8px;">③ 指标表齐全</div>
+        <p style="margin:0;font-size:13.2px;color:var(--ink-2);">每个项目都附完整经济技术指标表（得铺率、小铺率、主力店占比、回环度、车位数）。这是区分「学生作业」与「职业方案」的分水岭</p>
+      </div>
+    </div>
+
+    <h3 class="blk">可直接用于抄绘与阅读的 Aedas 商业项目</h3>
+    <table>
+      <thead><tr><th style="width:32%">项目</th><th>可学什么</th></tr></thead>
+      <tbody>
+        <tr><td><strong>苏州中心</strong>（凯德，约 113 万㎡）</td><td>7 栋塔楼 + 约 30 万㎡ 一站式商场 + 体验型商场的组合关系；600 家品牌、多元主力店（赛事级真冰场、影院、精品超市、儿童乐园）的落位逻辑</td></tr>
+        <tr><td><strong>苏州 HLCC Mall / Hong Leong City Center</strong>（Aedas，设计董事 Andy Wen，约 29.6 万㎡）</td><td>四层商业裙楼 + 四座塔楼落位四角以争取金鸡湖景观；<strong>裙楼连接两塔、设双中庭</strong>；南北向公共景观步道贯通场地；立面水平线条与裙楼体量的统一逻辑</td></tr>
+        <tr><td><strong>上海 Landmark Center</strong>（Aedas）</td><td>中央广场把地上地下商业连通，<strong>零售动线串联所有入口与中庭</strong>；建筑沿场地边缘布置，四角留出开放空间作为过渡节点；立面中式窗格母题从塔楼延伸至商业体</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 8 文件 -->
+  <section>
+    <div class="sec-head"><span class="sec-num">08</span><h2>工作区文件</h2></div>
+    <p class="sec-desc">所有内容都在 <code>aedas-plan-growth</code> 目录下。搜索 <code>uploads</code> 目录获取你的图纸。</p>
+    <div class="files">
+      <div class="f"><code>README.md</code><p>索引、训练日规则与日期、里程碑、Aedas 硬门槛</p></div>
+      <div class="f"><code>04-训练日历.md</code><p><strong>唯一日期依据</strong>：12 周逐日查询表、节假日停训日、预备周</p></div>
+      <div class="f"><code>01-阅读清单-12周.md</code><p>每天 30 分钟读什么：12 周主题、规范条文、真实案例、必掌握数字</p></div>
+      <div class="f"><code>02-临摹任务库-12周.md</code><p>每天 60 分钟画什么：分层抄绘法、抄绘对象、必画要素、手绘硬规矩</p></div>
+      <div class="f"><code>03-平面评价标准.md</code><p>六维评分卡、分档标准、12 条致命错误清单、五个月后的三问自检</p></div>
+      <div class="f"><code>uploads/</code><p>把手绘图纸照片或扫描件放这里，晚间评价会读取此目录</p></div>
+      <div class="f"><code>商业平面成长计划.html</code><p>本文件 —— 总纲，随时回来看</p></div>
+    </div>
+  </section>
+
+  <div class="foot">
+    商业综合体平面设计 · 成长训练系统　|　训练日 2026-09-21 ~ 12-21（仅周一~周五，共 60 天）　|　每日 30min 阅读 + 60min 手绘 + 晚间评审
+  </div>
+
+</div>
+</body>
+</html>
