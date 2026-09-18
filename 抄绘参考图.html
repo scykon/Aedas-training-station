@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>抄绘参考图库 · 12 周</title>
+<style>
+  :root {
+    --bg: #f7f7f5;
+    --panel: #ffffff;
+    --ink: #1b1b1a;
+    --ink-2: #5b5b58;
+    --ink-3: #8d8d88;
+    --line: #e3e3de;
+    --accent: #b8452f;
+    --accent-soft: #f6ece9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+    font-size: 14px; line-height: 1.65;
+  }
+  header {
+    padding: 34px 40px 26px; background: var(--panel);
+    border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 20;
+  }
+  h1 { margin: 0 0 8px; font-size: 21px; letter-spacing: .5px; font-weight: 650; }
+  .sub { color: var(--ink-2); font-size: 13px; margin: 0; }
+  .sub b { color: var(--accent); font-weight: 600; }
+  nav { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+  nav a {
+    font-size: 12px; text-decoration: none; color: var(--ink-2);
+    border: 1px solid var(--line); background: var(--bg);
+    padding: 3px 10px; border-radius: 999px; transition: .15s;
+  }
+  nav a:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+  main { padding: 28px 40px 80px; max-width: 1500px; margin: 0 auto; }
+  section { margin-bottom: 46px; scroll-margin-top: 180px; }
+  .wtitle {
+    display: flex; align-items: baseline; gap: 12px;
+    border-bottom: 2px solid var(--ink); padding-bottom: 8px; margin-bottom: 6px;
+  }
+  .wtitle h2 { margin: 0; font-size: 16px; font-weight: 650; }
+  .wtitle .tag { font-size: 12px; color: var(--ink-3); }
+  .note {
+    font-size: 12.5px; color: var(--ink-2); background: var(--accent-soft);
+    border-left: 3px solid var(--accent); padding: 8px 12px; margin: 10px 0 16px;
+    border-radius: 0 4px 4px 0;
+  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
+    overflow: hidden; display: flex; flex-direction: column; transition: .18s;
+  }
+  .card:hover { border-color: var(--ink-3); box-shadow: 0 4px 16px rgba(0,0,0,.07); }
+  .thumb {
+    height: 210px; background: #efefec; display: flex; align-items: center;
+    justify-content: center; cursor: zoom-in; overflow: hidden; border-bottom: 1px solid var(--line);
+  }
+  .thumb img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+  .body { padding: 11px 13px 13px; flex: 1; display: flex; flex-direction: column; }
+  .id { font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: .6px; }
+  .name { font-size: 13.5px; font-weight: 600; margin: 3px 0 5px; }
+  .desc { font-size: 12px; color: var(--ink-2); flex: 1; }
+  .ratio { display: inline-block; font-size: 11px; color: var(--ink-3); border: 1px solid var(--line); padding: 0 6px; border-radius: 3px; margin-top: 7px; }
+  .src { margin-top: 9px; font-size: 11.5px; }
+  .src a { color: var(--ink-3); text-decoration: none; border-bottom: 1px dotted var(--ink-3); }
+  .src a:hover { color: var(--accent); border-color: var(--accent); }
+  .lb {
+    display: none; position: fixed; inset: 0; background: rgba(20,20,18,.94);
+    z-index: 100; padding: 24px; cursor: zoom-out;
+  }
+  .lb.on { display: flex; align-items: center; justify-content: center; flex-direction: column; }
+  .lb img { max-width: 96vw; max-height: 88vh; object-fit: contain; background: #fff; }
+  .lb .cap { color: #eee; font-size: 13px; margin-top: 12px; text-align: center; }
+  footer { padding: 0 40px 60px; max-width: 1500px; margin: 0 auto; color: var(--ink-3); font-size: 12px; }
+  @media (max-width: 700px) {
+    header, main, footer { padding-left: 18px; padding-right: 18px; }
+    .grid { grid-template-columns: 1fr; }
+    .thumb { height: 180px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>抄绘参考图库 · 12 周</h1>
+  <p class="sub">39 张已核对图纸 · 本地路径 <b>参考图/</b> · 点击图片放大 · 每张附源页面链接<br>
+  <span style="font-size:12px;color:var(--ink-3);">本页只负责翻图。每天该读哪张案例卡（学点 3 条 / 接得上今天手绘的哪一块）见 <b>07-每日案例学习-12周.md</b>。</span><br>
+  <span style="font-size:12px;color:var(--ink-3);">图纸按发布方的原始文件名 + 比例标注筛选（不是逐张看过图面），个别分类可能有偏差 —— 第一次打开时扫一眼，不对的直接说，我换掉。</span></p>
+  <nav>
+    <a href="#w1">W1 骨架</a><a href="#w2">W2 防火</a><a href="#w3">W3 动线</a>
+    <a href="#w4">W4 中庭</a><a href="#w5">W5 铺位</a><a href="#w6">W6 业态</a>
+    <a href="#w7">W7 多首层</a><a href="#w8">W8 后勤</a><a href="#w9">W9 消防</a>
+    <a href="#w10">W10 地库</a><a href="#w11">W11 立面反推</a><a href="#w12">W12 实战</a>
+  </nav>
+</header>
+
+<main id="app"></main>
+
+<footer>
+  图纸版权归原建筑师与业主所有，仅限个人学习临摹，不得转载或商用。<code>参考图/</code> 已加入 .gitignore，不会同步到公开仓库。<br>
+  备选图库：<code>参考图/_备选/</code>（77 张效果图、实景、分析图）。
+</footer>
+
+<div class="lb" id="lb"><img id="lbimg" alt=""><div class="cap" id="lbcap"></div></div>
+
+<script>
+const D = [
+  { w:1, t:"抄骨架（柱网 + 外轮廓 + 核心筒）", note:"只画图层①②，不排铺位。先量柱距再落笔。", items:[
+    { id:"W01-1", f:"参考图/W01-1_Aedas横琴中冶盛世_首层平面1-300.jpg", n:"Aedas 横琴中冶盛世国际广场 · 首层平面", r:"1:300", d:"本周主力图。Aedas 真实商业裙楼，柱网/核心筒/扶梯井清晰可量。", s:"gooood" },
+    { id:"W01-2", f:"参考图/W01-2_Aedas上海LandmarkCenter_首层平面.jpg", n:"Aedas 上海 Landmark Center · 首层平面", r:"—", d:"对照：核心筒偏置时柱网怎么让，中庭占多大地盘。", s:"ArchDaily" },
+    { id:"W01-3", f:"参考图/W01-3_成都武侯星悦荟_一层平面.jpg", n:"成都武侯星悦荟 · 一层平面", r:"—", d:"街区式商业的柱网，比盒子商业自由，适合练轴线编号。", s:"ArchDaily" },
+    { id:"W01-5", f:"参考图/W01-5_上海瑞安新天地时尚II_首层平面1-300.jpg", n:"上海瑞安新天地时尚II · 首层平面", r:"1:300", d:"最干净的一张：柱网与铺位边界一目了然，带指北针与比例尺。", s:"ArchDaily" }
+  ]},
+  { w:2, t:"抄防火（分区线 + 疏散楼梯）", note:"公开网络几乎查不到现成防火分区图。本周拿 W01-1 的骨架，自己按 GB 50016 判分区、算面积、落疏散楼梯。", items:[
+    { id:"W02-1", f:"参考图/W02-1_Aedas横琴中冶盛世_二层平面1-300.jpg", n:"Aedas 横琴中冶盛世 · 二层平面", r:"1:300", d:"看中庭挑空如何影响上下层分区面积。", s:"gooood" },
+    { id:"W02-2", f:"参考图/W02-2_Aedas横琴中冶盛世_三层平面1-300.jpg", n:"Aedas 横琴中冶盛世 · 三层平面", r:"1:300", d:"同上一层的竖向关系。", s:"gooood" }
+  ]},
+  { w:3, t:"抄动线（单动线 / 环形 / 主次动线）", note:"把 W01-1 的主动线用红笔重画一遍，量长度、算回环度。", items:[
+    { id:"W03-1", f:"参考图/W03-1_Aedas横琴中冶盛世_立体步行动线L1-L3.jpg", n:"Aedas 横琴中冶盛世 · 立体步行动线 L1–L3", r:"—", d:"Aedas 自己画的动线分析，红色为步行路径，直接看职业做法。", s:"gooood" },
+    { id:"W03-2", f:"参考图/W03-2_上海世茂广场_动线分析1.jpg", n:"上海世茂广场 · 动线分析 1", r:"—", d:"西区 T 字动线 + 东区环形动线的分区处理。", s:"ArchDaily" },
+    { id:"W03-3", f:"参考图/W03-3_上海世茂广场_动线分析2.jpg", n:"上海世茂广场 · 动线分析 2", r:"—", d:"同上，对照看改造前后的差异。", s:"ArchDaily" },
+    { id:"W03-4", f:"参考图/W03-4_成都武侯星悦荟_形态生成分析.jpg", n:"成都武侯星悦荟 · 形态生成分析", r:"—", d:"体量如何生成室外动线。", s:"ArchDaily" }
+  ]},
+  { w:4, t:"抄中庭（中庭与垂直交通的耦合）", note:"把中庭移动 15m 重画一遍，说明租金等级怎么变。", items:[
+    { id:"W04-1", f:"参考图/W04-1_上海世茂广场_三层平面.jpg", n:"上海世茂广场 · 三层平面", r:"—", d:"梯形中庭 + 双侧扶梯，改造后动线如何被简化。", s:"ArchDaily" },
+    { id:"W04-2", f:"参考图/W04-2_上海世茂广场_五层平面.jpg", n:"上海世茂广场 · 五层平面", r:"—", d:"五、六层餐饮与中庭的关系。", s:"ArchDaily" },
+    { id:"W04-3", f:"参考图/W04-3_重庆约克郡光环_中庭轴测.jpg", n:"重庆约克郡光环购物公园 · 中庭轴测", r:"—", d:"室内植物园中庭的空间组织。", s:"ArchDaily" },
+    { id:"W04-4", f:"参考图/W04-4_上海世茂广场_剖面1-1.jpg", n:"上海世茂广场 · 剖面 1-1", r:"—", d:"中庭挑空的竖向关系。", s:"ArchDaily" }
+  ]},
+  { w:5, t:"抄铺位（得铺率 / 小铺率 / 死铺）", note:"W05-4 是同一栋楼改造前后的两版平面，最适合直接对比得铺率。", items:[
+    { id:"W05-1", f:"参考图/W05-1_成都武侯星悦荟_二层平面.jpg", n:"成都武侯星悦荟 · 二层平面", r:"—", d:"逐铺标开间 × 进深。", s:"ArchDaily" },
+    { id:"W05-2", f:"参考图/W05-2_成都武侯星悦荟_三层平面.jpg", n:"成都武侯星悦荟 · 三层平面", r:"—", d:"同上。", s:"ArchDaily" },
+    { id:"W05-3", f:"参考图/W05-3_成都武侯星悦荟_四层平面.jpg", n:"成都武侯星悦荟 · 四层平面", r:"—", d:"同上。", s:"ArchDaily" },
+    { id:"W05-4", f:"参考图/W05-4_广州悦汇城_改造前后平面对比.jpg", n:"广州悦汇城 · 改造前后平面对比", r:"—", d:"L-B1 层同位置两版平面并排，看铺位怎么被重新切。", s:"ArchDaily" },
+    { id:"W05-5", f:"参考图/W05-5_广州悦汇城_3D平面图.jpg", n:"广州悦汇城 · 3D 平面图", r:"—", d:"轴测视角看铺位与中庭关系。", s:"ArchDaily" }
+  ]},
+  { w:6, t:"抄业态（主力店落位）", note:"带超市 + 影院竖向关系的公开平面极难找。用餐饮主力层练落位逻辑，超市/影院位置自己在图上排并论证。", items:[
+    { id:"W06-1", f:"参考图/W06-1_Aedas横琴中冶盛世_四层平面-餐饮1-300.jpg", n:"Aedas 横琴中冶盛世 · 四层平面（餐饮）", r:"1:300", d:"图纸直接标了 F&B / Retail / Green Area 分区色。", s:"gooood" },
+    { id:"W06-2", f:"参考图/W06-2_深圳天空里商业村落_一层平面.jpg", n:"深圳天空里商业村落 · 一层平面", r:"—", d:"街区式混合业态的落位。", s:"ArchDaily" },
+    { id:"W06-3", f:"参考图/W06-3_深圳天空里商业村落_二层平面.jpg", n:"深圳天空里商业村落 · 二层平面", r:"—", d:"同上，分层对照。", s:"ArchDaily" }
+  ]},
+  { w:7, t:"抄竖向与多首层", note:"总图 + 首层同纸抄绘，画出多首层关系。", items:[
+    { id:"W07-1", f:"参考图/W07-1_Aedas上海LandmarkCenter_地面层平面.jpg", n:"Aedas 上海 Landmark Center · 地面层平面", r:"—", d:"中央广场如何把地上地下商业连通。", s:"ArchDaily" },
+    { id:"W07-2", f:"参考图/W07-2_Aedas横琴中冶盛世_总平面1-300.jpg", n:"Aedas 横琴中冶盛世 · 总平面", r:"1:300", d:"多方向入口 + 下沉广场 + 飞天梯。", s:"gooood" },
+    { id:"W07-3", f:"参考图/W07-3_上海苏河湾万象天地_总平面.jpg", n:"上海苏河湾万象天地 · 总平面", r:"—", d:"下沉广场与历史建筑「天后宫」的关系。", s:"ArchDaily" }
+  ]},
+  { w:8, t:"抄后勤（货物流线）", note:"用蓝色画出完整货物流线，自检与顾客主动线交叉次数 = 0。", items:[
+    { id:"W08-1", f:"参考图/W08-1_上海苏河湾万象天地_地下一层平面.jpg", n:"上海苏河湾万象天地 · 地下一层平面", r:"—", d:"卸货、后勤通道与商业主体的关系。", s:"ArchDaily" },
+    { id:"W08-2", f:"参考图/W08-2_上海新天地东台里_地下一层平面.jpg", n:"上海新天地东台里 · 地下一层平面", r:"—", d:"深色填充的铺位图，看清后勤与铺位的分界。", s:"ArchDaily" }
+  ]},
+  { w:9, t:"抄消防总图", note:"在 W09-1 上画消防车道、登高场地、扑救面。", items:[
+    { id:"W09-1", f:"参考图/W09-1_广州珠江星火1926_总平面1-1000.jpg", n:"广州珠江星火1926 · 总平面", r:"1:1000", d:"唯一带标准比例尺的总图，画消防车道最合适。", s:"ArchDaily" },
+    { id:"W09-2", f:"参考图/W09-2_上海临港新城社区商业_总平面.jpg", n:"上海临港新城社区商业 · 总平面", r:"—", d:"场地退线与周边关系。", s:"ArchDaily" },
+    { id:"W09-3", f:"参考图/W09-3_绍兴天地_总平面.jpg", n:"绍兴天地 · 总平面", r:"—", d:"历史厂区改造的总图组织。", s:"ArchDaily" },
+    { id:"W09-4", f:"参考图/W09-4_上海新天地东台里_总平面.jpg", n:"上海新天地东台里 · 总平面", r:"—", d:"高密度街区的总图。", s:"ArchDaily" }
+  ]},
+  { w:10, t:"抄地库", note:"算单车位面积，对照 37㎡（非人防）/ 40㎡（含人防）。", items:[
+    { id:"W10-1", f:"参考图/W10-1_上海新天地东台里_地下二层平面.jpg", n:"上海新天地东台里 · 地下二层平面", r:"—", d:"车位排布 + 坡道 + 与商业的连通口。", s:"ArchDaily" },
+    { id:"W10-2", f:"参考图/W10-2_上海苏河湾万象天地_地下二层平面.jpg", n:"上海苏河湾万象天地 · 地下二层平面", r:"—", d:"同上，对照看柱网对车位效率的影响。", s:"ArchDaily" }
+  ]},
+  { w:11, t:"抄自己（立面反推平面）—— 王牌周", note:"W11-1/2/3 是同一项目的立面 + 剖面 + 总平，比例齐全，是「立面反推平面」最干净的样本。本周用自己公司的项目做，图纸不要上传公开仓库。", items:[
+    { id:"W11-1", f:"参考图/W11-1_广州珠江星火1926_北立面1-500.jpg", n:"广州珠江星火1926 · 北立面", r:"1:500", d:"立面分格 → 反推柱距。", s:"ArchDaily" },
+    { id:"W11-2", f:"参考图/W11-2_广州珠江星火1926_西立面1-500.jpg", n:"广州珠江星火1926 · 西立面", r:"1:500", d:"同上。", s:"ArchDaily" },
+    { id:"W11-3", f:"参考图/W11-3_广州珠江星火1926_剖面1-500.jpg", n:"广州珠江星火1926 · 剖面", r:"1:500", d:"层高与结构关系的直接证据。", s:"ArchDaily" },
+    { id:"W11-4", f:"参考图/W11-4_Aedas上海LandmarkCenter_立面与剖面.jpg", n:"Aedas 上海 Landmark Center · 立面与剖面", r:"—", d:"传统中式窗格母题 → 结构柱网的对位。", s:"ArchDaily" },
+    { id:"W11-5", f:"参考图/W11-5_广州悦汇城_立面图1.jpg", n:"广州悦汇城 · 立面图 1", r:"—", d:"大体量商业裙楼立面。", s:"ArchDaily" },
+    { id:"W11-6", f:"参考图/W11-6_广州悦汇城_立面图2.jpg", n:"广州悦汇城 · 立面图 2", r:"—", d:"同上。", s:"ArchDaily" }
+  ]},
+  { w:12, t:"综合实战（自拟地块，复用前 11 周）", note:"不配新图。要参考就回翻：全套裙楼平面 W01-1 / W02-1 / W02-2 / W06-1 / W07-2（Aedas 横琴中冶盛世五张凑成完整一套），总图 W09-1，地库 W10-1 / W10-2。", items:[] }
+];
+
+const SRC_URL = {
+  gooood_hq: "https://www.gooood.cn/en/mcc-shengshi-international-plaza-china-by-aedas.htm",
+  gooood: "https://www.gooood.cn/",
+  ad: "https://www.archdaily.cn/",
+  adLandmark: "https://www.archdaily.com/868956/shanghai-landmark-center-aedas",
+  adWuhou: "https://www.archdaily.cn/zh/960496/wu-hou-xing-yue-hui-clou-architects",
+  adShimao: "https://www.archdaily.cn/zh/914880/shang-hai-shi-mao-yan-chang-gai-zao-kokaistudios",
+  adYuehui: "https://www.archdaily.cn/zh/962797/yan-zhou-yue-hui-cheng-da-yi-ming-liang-jian-zhu-shi-wu-suo",
+  adRuiAn: "https://www.archdaily.cn/zh/1000012/rui-an-xin-tian-di-shi-shang-ii-aimkai-mu-jian-zhu-shi-wu-suo",
+  adSky: "https://www.archdaily.cn/zh/1000448/tian-kong-li-star-shang-ye-cun-luo-shen-zhen-da-xue-ben-yuan-she-ji-yan-jiu-zhong-xin",
+  adSuhe: "https://www.archdaily.cn/zh/992944/shang-hai-su-he-wan-mo-xiang-tian-di-kokaistudios",
+  adDongtai: "https://www.archdaily.cn/zh/1041272/xin-tian-di-dong-tai-li-kokaistudios",
+  adZhujiang: "https://www.archdaily.cn/zh/1009886/shi-nei-shang-ye-jian-zhu-gmp-architects",
+  adLingang: "https://www.archdaily.cn/zh/918752/shang-hai-lin-gang-xin-cheng-she-qu-shang-ye-zhong-xin-shang-hai-zhong-fang-jian-zhu-she-ji",
+  adShaoxing: "https://www.archdaily.cn/zh/1024243/shao-xing-tian-di-kokaistudios",
+  adYork: "https://www.archdaily.cn/zh/983336/zhong-qing-yue-ke-jun-guang-huan-gou-wu-gong-yuan-phapai-ang-guo-ji-jian-zhu-she-ji"
+};
+const PAGE = {
+  "W01-1":"gooood_hq","W02-1":"gooood_hq","W02-2":"gooood_hq","W03-1":"gooood_hq","W06-1":"gooood_hq","W07-2":"gooood_hq",
+  "W01-2":"adLandmark","W07-1":"adLandmark","W11-4":"adLandmark",
+  "W01-3":"adWuhou","W03-4":"adWuhou","W05-1":"adWuhou","W05-2":"adWuhou","W05-3":"adWuhou",
+  "W03-2":"adShimao","W03-3":"adShimao","W04-1":"adShimao","W04-2":"adShimao","W04-4":"adShimao",
+  "W05-4":"adYuehui","W05-5":"adYuehui","W11-5":"adYuehui","W11-6":"adYuehui",
+  "W01-5":"adRuiAn",
+  "W06-2":"adSky","W06-3":"adSky",
+  "W07-3":"adSuhe","W08-1":"adSuhe","W10-2":"adSuhe",
+  "W08-2":"adDongtai","W09-4":"adDongtai","W10-1":"adDongtai",
+  "W09-1":"adZhujiang","W11-1":"adZhujiang","W11-2":"adZhujiang","W11-3":"adZhujiang",
+  "W09-2":"adLingang","W09-3":"adShaoxing","W04-3":"adYork"
+};
+
+const app = document.getElementById("app");
+D.forEach(w => {
+  const sec = document.createElement("section");
+  sec.id = "w" + w.w;
+  let html = `<div class="wtitle"><h2>第 ${w.w} 周</h2><span class="tag">${w.t}</span></div>`;
+  if (w.note) html += `<div class="note">${w.note}</div>`;
+  if (w.items.length) {
+    html += '<div class="grid">';
+    w.items.forEach(it => {
+      const purl = SRC_URL[PAGE[it.id]] || SRC_URL.ad;
+      html += `<div class="card">
+        <div class="thumb" data-f="${it.f}" data-n="${it.n}"><img src="${it.f}" alt="${it.n}" loading="lazy"></div>
+        <div class="body">
+          <div class="id">${it.id}</div>
+          <div class="name">${it.n}</div>
+          <div class="desc">${it.d}</div>
+          ${it.r !== "—" ? `<div><span class="ratio">${it.r}</span></div>` : ""}
+          <div class="src">源：<a href="${purl}" target="_blank" rel="noopener">${it.s} 项目页</a></div>
+        </div>
+      </div>`;
+    });
+    html += "</div>";
+  } else {
+    html += '<div class="note">自拟地块出图，不配新图。</div>';
+  }
+  sec.innerHTML = html;
+  app.appendChild(sec);
+});
+
+const lb = document.getElementById("lb"), lbimg = document.getElementById("lbimg"), lbcap = document.getElementById("lbcap");
+document.addEventListener("click", e => {
+  const t = e.target.closest(".thumb");
+  if (t) {
+    lbimg.src = t.dataset.f; lbcap.textContent = t.dataset.n;
+    lb.classList.add("on");
+  } else if (e.target.closest(".lb")) {
+    lb.classList.remove("on"); lbimg.src = "";
+  }
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape") { lb.classList.remove("on"); lbimg.src = ""; } });
+</script>
+</body>
+</html>
